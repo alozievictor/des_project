@@ -6,10 +6,24 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
+    "final-form": "^4.20.10",
+    "flowbite-react": "^0.9.0",
+    "framer-motion": "^11.0.3",
+    "hamburger-react": "^2.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-final-form": "^6.5.9",
+    "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-simple-typewriter": "^5.0.1",
+    "react-spinners": "^0.13.8",
+    "react-toastify": "^10.0.5",
+    "tailwind-merge": "^2.2.1",
+    "tailwind-scrollbar": "^3.1.0",
+    "validate.js": "^0.13.1",
+    "web-vitals": "^2.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
   }
 }
