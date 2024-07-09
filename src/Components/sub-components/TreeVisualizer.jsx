@@ -8,7 +8,7 @@ const TreeVisualizer = ({ treeData }) => {
     }
 
     return (
-      <div className="node">
+      <div className="node relative">
         <div className="node-value">{node.value}</div>
         <div className="children">
           {renderPreOrder(node.left)}

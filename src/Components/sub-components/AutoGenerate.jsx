@@ -319,7 +319,7 @@ const AutoGenerate = () => {
         </div>
       </div>
 
-      <div className="border relative flex justify-center items-center">
+      <div className="border relative overflow-hidden flex justify-center items-center">
         <div>
           <TreeVisualizer treeData={treeData} />
           <div className="mb-5 w-[100%]">
