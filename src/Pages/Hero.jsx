@@ -80,7 +80,9 @@ const Hero = () => {
               <div className="w-[100%] mb-5">
                 <p className=" text-7xl text-center text-white capitalize font-semibold font-[Urbanist]">
                   <Typewriter
-                    words={["pre order binary tree depth first search"]}
+                    words={[
+                      "Graph-Depth first search and pre-order binary search tree",
+                    ]}
                     loop={1}
                     cursor
                     cursorStyle=""
@@ -95,7 +97,7 @@ const Hero = () => {
                 <p className="text-3xl text-center text-white capitalize font-medium font-[Urbanist]">
                   {firstDone && (
                     <Typewriter
-                      words={["Group 9"]}
+                      words={["Group-9"]}
                       loop={1}
                       cursor
                       cursorStyle=""

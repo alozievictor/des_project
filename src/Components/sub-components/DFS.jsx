@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TreeVisualizer from "./TreeVisualizer";
 
-const Inputted = () => {
+const DFS = () => {
   const [error, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [treeData, setTreeData] = useState(null);
@@ -87,12 +87,9 @@ const Inputted = () => {
 
       console.log("tree data:", treeData);
 
-      const response = await axios.post(
-        "http://localhost:4000/api/preorder-traverse",
-        {
-          array: numbers,
-        }
-      );
+      const response = await axios.post("http://localhost:4000/api/dfs-bst", {
+        array: numbers,
+      });
 
       setData(response.data.result);
 
@@ -151,17 +148,17 @@ const Inputted = () => {
       </div>
 
       <div className="border relative">
-        <div>
+        <div className="flex justify-center items-center">
           <TreeVisualizer treeData={treeData} />
         </div>
         <div className="mb-5 w-[100%]">
           {data && data.length > 0 ? (
             <div className="w-[100%] relative p-5 flex items-center">
-              <p>Pre-order Traversal:</p>
+              <p>Depth first Search:</p>
               <ul className="flex items-center ml-1">
                 {data.map((item, index) => (
                   <li
-                    className="text-lg font-semibold flex justify-center items-center text-gray-800"
+                    className="text-lg font-semibold text-gray-800"
                     key={index}
                   >
                     {item},
@@ -170,14 +167,41 @@ const Inputted = () => {
               </ul>
             </div>
           ) : (
-            <p className="text-lg ml-3 text-center font-semibold text-gray-800">
-              Pre-order Traversal:
+            <p className="text-lg ml-3 flex justify-center items-center font-semibold text-gray-800">
+              Depth first Search:
             </p>
           )}
         </div>
       </div>
+
+      {/* <div className="border relative flex justify-center items-center">
+        <div>
+          <TreeVisualizer treeData={treeData} />
+          <div className="mb-5 w-[100%]">
+            {data.length > 0 ? (
+              <div className="w-[100%] relative p-5 flex items-center">
+                <p>Pre-order Traversal:</p>
+                <ul className="flex items-center ml-1">
+                  {data.map((item, index) => (
+                    <li
+                      className="text-lg font-semibold text-gray-800"
+                      key={index}
+                    >
+                      {item},
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p className="text-lg ml-3 font-semibold text-gray-800">
+                Pre-order Traversal:
+              </p>
+            )}
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
 
-export default Inputted;
+export default DFS;

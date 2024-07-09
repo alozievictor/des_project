@@ -1,12 +1,14 @@
 import React from "react";
 import AutoGenerate from "./sub-components/AutoGenerate";
 import Inputted from "./sub-components/Inputted";
+import DFS from "./sub-components/DFS";
 import { motion, AnimatePresence } from "framer-motion";
 
 const TabContainer = () => {
   const [showTab, setShowTab] = React.useState({
     Inputted: true,
     AutoGenerate: false,
+    Dfs: false,
   });
 
   return (
@@ -73,6 +75,7 @@ const TabContainer = () => {
                           ...prev,
                           Inputted: true,
                           AutoGenerate: false,
+                          Dfs: false,
                         }))
                       }
                     >
@@ -96,10 +99,35 @@ const TabContainer = () => {
                           ...prev,
                           Inputted: false,
                           AutoGenerate: true,
+                          Dfs: false,
                         }))
                       }
                     >
                       Auto-Generate
+                    </button>
+                  </li>
+
+                  <li className="text-sm p-1 cursor-pointer">
+                    <button
+                      //   role="button"
+                      className={`${
+                        showTab.Dfs
+                          ? "bg-[#0d948836] h-[40px] text-teal-600 font-semibold text-[15px] capitalize py-2 px-5 rounded font-[Urbanist]"
+                          : "text-teal-600 capitalize font-norml text-[15px]"
+                      }`}
+                      id="tab-0"
+                      data-toggle="tab"
+                      href="#"
+                      onClick={() =>
+                        setShowTab((prev) => ({
+                          ...prev,
+                          Inputted: false,
+                          AutoGenerate: false,
+                          Dfs: true,
+                        }))
+                      }
+                    >
+                      Depth First Search
                     </button>
                   </li>
                 </ul>
@@ -109,6 +137,7 @@ const TabContainer = () => {
             <div className="w-full my-7 bg-transparent">
               {showTab.Inputted && <Inputted />}
               {showTab.AutoGenerate && <AutoGenerate />}
+              {showTab.Dfs && <DFS />}
             </div>
           </div>
         </div>
